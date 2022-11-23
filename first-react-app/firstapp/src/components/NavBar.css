@@ -1,0 +1,11 @@
+.Nav {
+    display: flex;
+    
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
