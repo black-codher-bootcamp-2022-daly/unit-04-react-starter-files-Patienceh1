@@ -14,6 +14,19 @@ const taskList = [
 
 function App() {
   const [data, setData] = React.useState(taskList);
+
+  function toggleComplete(id) {
+    const newState = data.map((item) => {
+      if (item.id === id) {
+        item.isComplete = !item.isComplete;
+      }
+      return item;
+    });
+
+    setData(newState);
+    console.log(`Task with the id '${id}' was clicked`);
+  }
+
   return (
     <Fragment>
       <h1 key="heading">Task List</h1>
@@ -21,6 +34,7 @@ function App() {
         {taskList.map((props) => {
           return (
             <Task
+              handleClick={toggleComplete}
               key={props.id}
               title={props.title}
               isComplete={props.isComplete}
