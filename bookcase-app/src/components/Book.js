@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const Book = (props) => {
   console.log(props)
@@ -16,6 +17,21 @@ return (
   ) 
 }
 
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    volumeInfo: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      authors: PropTypes.array.isRequired,
+      description: PropTypes.string.isRequired,
+    }),
+    saleInfo: PropTypes.shape({
+      retailPrice: PropTypes.shape({
+        amount: PropTypes.number.isRequired,
+      }),
+    }),
+  }),
+};
 
 export default Book;
 
