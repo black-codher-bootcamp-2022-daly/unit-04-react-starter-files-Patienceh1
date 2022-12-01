@@ -10,8 +10,8 @@ return (
       <h2>{props.item.volumeInfo.title}</h2>
       <h3>{props.item.volumeInfo.authors}</h3>
       <p>{props.item.volumeInfo.description}</p>
-      <h2>{props.item.volumeInfo.retailPrice}</h2>
-      <img>{props.item.volumeInfo.smallThumbnail}</img>
+      <h2>{props.item.saleInfo.retailPrice?.amount}{props.item.saleInfo.retailPrice?.currencyCode}</h2>
+      <img src={props.item.volumeInfo.imageLinks.smallThumbnail} />
     </ul>
     
   ) 
