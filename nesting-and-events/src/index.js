@@ -13,7 +13,7 @@ const taskList = [
 ];
 
 function App() {
-  const [data, setData] = React.useState(taskList);
+  const [data, setData] = useState(taskList);
 
   function toggleComplete(id) {
     const newState = data.map((item) => {
@@ -36,6 +36,7 @@ function App() {
             <Task
               handleClick={toggleComplete}
               key={props.id}
+              id={props.id}
               title={props.title}
               isComplete={props.isComplete}
             />
