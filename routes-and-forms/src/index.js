@@ -1,6 +1,7 @@
 import {React} from "react";
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom'
+import PetForm from "./components/PetForm";
 
 export default function App() {
   return (
@@ -15,7 +16,7 @@ export default function App() {
         <Route path="/" element={<Home/>} />
         <Route path="kittens" element={<Animals name={"kittens"} img={"imgs/kitten.jpg"} />} />
         <Route path="Puppies"element={<Animals name={"Puppies"} img={"imgs/puppy.jpg"} />} />
-        <Route path="Ducklings"element={<Animals name={"Puppies"} img={"imgs/duckling.jpg"} />} />
+        <Route path="Ducklings"element={<Animals name={"Ducklings"} img={"imgs/duckling.jpg"} />} />
       </Routes>
   </Router>
   );
@@ -25,6 +26,7 @@ function Home() {
   return <>
           <h1>All Pets</h1>
           <section>This is the page for all your pet needs</section>
+          <PetForm />
           <img src="imgs/kitten.jpg" alt="Kitten"/>
           <img src="imgs/puppy.jpg" alt="Puppy"/>
           <img src="imgs/duckling.jpg" alt="Duckling"/>
