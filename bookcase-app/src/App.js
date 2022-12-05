@@ -1,30 +1,25 @@
-import React, { useState } from 'react';
-import Book from './components/Book';
-import Hook from './components/Hooks';
-import data from './models/books.json';
+import React, { useState } from "react";
+import Book from "./components/Book";
+import Hook from "./components/Hooks";
+import data from "./models/books.json";
+import BookList from "./components/BookList";
 
 function App() {
   //const books = data;
-  const[books] = useState(data);
-  return <ul>
-  <BookList>
-  {books.map((book)=><Book item={book} key={book.id} />)}
-  <Hook />
-  </BookList>
-  </ul>
-}
-
-
-function BookList (props) {
-return(
-    <div style={{
-      backgroundColor: "pink"
-    }}>
-      <h1>Patience's Book Case</h1>
-      <div className="BookList-Container">{props.children}</div>
-    </div>
-  )
+  const [books] = useState(data);
+  function addBook(title) {
+    console.log(`The book ${title} was clicked`);
+  }
+  return (
+    <ul>
+      <BookList className="bookcase-Container" addBook={addBook}>
+        {books.map((book) => (
+          <Book  item={book} key={book.id} onClick={()=> book.addBook(book.id)} />
+        ))}
+        <Hook />
+      </BookList>
+    </ul>
+  );
 }
 
 export default App;
-

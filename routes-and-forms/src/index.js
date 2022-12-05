@@ -8,10 +8,14 @@ export default function App() {
       <ul className="breadcrumb">
         <li><Link to="/"> All Pets </Link></li>
         <li><Link to="/kittens"> Kittens </Link></li>
+        <li><Link to="/Puppies"> Puppies </Link></li>
+        <li><Link to="/Ducklings"> Ducklings </Link></li>
       </ul>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="kittens" element={<Kittens />} />
+        <Route path="kittens" element={<Animals name={"kittens"} img={"imgs/kitten.jpg"} />} />
+        <Route path="Puppies"element={<Animals name={"Puppies"} img={"imgs/puppy.jpg"} />} />
+        <Route path="Ducklings"element={<Animals name={"Puppies"} img={"imgs/duckling.jpg"} />} />
       </Routes>
   </Router>
   );
@@ -32,7 +36,26 @@ function Kittens() {
       <h1>Kittens</h1>
       <section>This is the cats page</section>
       <img src="imgs/kitten.jpg" alt="Kitten"/>
+      <img src="imgs/puppy.jpg" alt="Puppy"/>
     </>
+}
+
+function Puppies () {
+  return <>
+  <h1>Puppies</h1>
+  <section>This is the puppies page</section>
+  </>
+}
+
+function Animals ({name, img}) {
+
+  return (
+    <div>
+      <h2>{name}</h2>
+      <section>This is the {name} page</section>
+      <img src={img} alt={name}/>
+    </div>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
