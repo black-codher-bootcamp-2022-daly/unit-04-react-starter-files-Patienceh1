@@ -7,14 +7,20 @@ import BookList from "./components/BookList";
 function App() {
   //const books = data;
   const [books] = useState(data);
-  function addBook(title) {
-    console.log(`The book ${title} was clicked`);
+  function addBook(id) {
+    console.log(`The book was clicked:` + id);
   }
   return (
     <ul>
-      <BookList className="bookcase-Container" addBook={addBook}>
+      <BookList className="bookcase-Container" >
         {books.map((book) => (
-          <Book  item={book} key={book.id} onClick={()=> book.addBook(book.id)} />
+          <Book
+          addBook={addBook}
+          handleClick={addBook} id={book.id}
+            item={book}
+            key={book.id}
+           
+          />
         ))}
         <Hook />
       </BookList>
