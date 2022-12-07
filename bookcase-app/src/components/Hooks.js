@@ -3,14 +3,17 @@ import { useState } from 'react';
 
 
 
+
 export default function Hook() {
-    const [count, setCount] = useState(10);
+    const [count, setCount] = useState(0);
 
     function addOne () {
       setCount(count + 1)
+      
     }
 
     return <div className='Hook'>
-       <button onClick={addOne}>count={count}</button>
+       <button onClick={addOne}>Add +{count}</button>
     </div>
 }
+

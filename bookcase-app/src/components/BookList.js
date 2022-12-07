@@ -7,7 +7,8 @@ export default function BookList(props) {
     <div className="BookList-Container"
     
     style={{
-      backgroundColor: "beige" }}>
+      backgroundColor: "beige"
+       }}>
         <h1 style={{ backgroundColor: "pink" }}>Patience's Book Case</h1>
       {props.children} 
       
