@@ -1,13 +1,22 @@
 import './App.css';
 import React from 'react'
+import Car from './Components/Car'
+import Bicycle from './Components/Bicycle';
+import Skateboard from './Components/Skateboard';
+import Bus from './Components/Bus';
+import Truck from './Components/Truck';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Car />
+      <Bicycle />
+      <Bus />
+      <Skateboard />
+      <Truck />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        
         </p>
         <a
           className="App-link"
@@ -15,9 +24,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+        
         </a>
+
       </header>
+      
     </div>
   );
 }
