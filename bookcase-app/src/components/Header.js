@@ -6,7 +6,7 @@ export default function Header (props) {
     return <>
         <h1 style={{ backgroundColor: "pink" }}>Patience's Book Case</h1>
         <div>
-        <Link to="/">Home</Link>
+        <Link to="/">Home{props.Book}</Link>
         </div>
         <div>
         <Link to="/bookcase" className="bookLink">Bookcase {props.Book}</Link>

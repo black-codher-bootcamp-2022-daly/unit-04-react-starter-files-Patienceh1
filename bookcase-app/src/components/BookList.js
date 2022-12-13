@@ -8,6 +8,7 @@ export default function BookList(props) {
     
     style={{
       backgroundColor: "beige"
+      
        }}>
         
       {props.children} 
