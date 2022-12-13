@@ -16,7 +16,7 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="./" element={<></>} />
+        <Route path="./" element={<><App /></>} />
         <Route
           path="/bookcase"
           element={

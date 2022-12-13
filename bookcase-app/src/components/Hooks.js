@@ -13,7 +13,16 @@ export default function Hook() {
     }
 
     return <div className='Hook'>
-       <button onClick={addOne}>Add +{count}</button>
+       <button  style={buttonWithStyle} onClick={addOne}>Add +{count}</button>
     </div>
 }
 
+const buttonWithStyle = {
+  color: "black",
+  fontSize: "20px",
+  fontWeight: "bold",
+  padding: "10px 15px",
+  backgroundColor: "orange",
+
+
+};
