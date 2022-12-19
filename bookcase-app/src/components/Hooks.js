@@ -13,7 +13,7 @@ export default function Hook() {
     }
 
     return <div className='Hook'>
-       <button  style={buttonWithStyle} onClick={addOne}>Add +{count}</button>
+     <button  style={buttonWithStyle} onClick={addOne}>Add +{count}</button>
     </div>
 }
 
