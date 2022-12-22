@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 
 
-const Book = (props) => {
+const Book = (props, onClick) => {
   console.log(props)
 
   
@@ -15,7 +15,7 @@ return (
       <h2>{props.item.saleInfo.retailPrice?.amount}{props.item.saleInfo.retailPrice?.currencyCode}</h2>
       <img src={props.item.volumeInfo.imageLinks.smallThumbnail} alt={props.item.volumeInfo.title} />
       </ul>
-      <button onClick={()=> props.handleClick(props.id)}>Add +</button>
+      <button onClick={()=> props.onClick(props.id)}>Add +</button>
     </div>
   ) 
 }
