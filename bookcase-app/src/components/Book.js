@@ -1,43 +1,46 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 
-
-const Book = (props, onClick) => {
-  console.log(props)
-
-  
-return (
-  <div>
-    <ul>
-      <h2>{props.item.volumeInfo.title}</h2>
-      <h3>{props.item.volumeInfo.authors}</h3>
-      <p>{props.item.volumeInfo.description}</p>
-      <h2>{props.item.saleInfo.retailPrice?.amount}{props.item.saleInfo.retailPrice?.currencyCode}</h2>
-      <img src={props.item.volumeInfo.imageLinks.smallThumbnail} alt={props.item.volumeInfo.title} />
+const Book = (props) => {
+  console.log(props);
+const {book} = props
+  return (
+    <div>
+      <ul>
+        <h2>{book.volumeInfo.title}</h2>
+        <h3>{book.volumeInfo.authors}</h3>
+        <p>{book.volumeInfo.description}</p>
+        <h2>
+          {book.saleInfo.retailPrice?.amount}
+          {book.saleInfo.retailPrice?.currencyCode}
+        </h2>
+        <img
+          src={book.volumeInfo.imageLinks.smallThumbnail}
+          alt={book.volumeInfo.title}
+        />
       </ul>
-      <button onClick={()=> props.onClick(props.id)}>Add +</button>
+      <button onClick={() => props.onClick(props.id)}> { props.isInTheBasket ? "Remove" : "Add +"}</button>
     </div>
-  ) 
-}
-
+  );
+};
 
 Book.propTypes = {
   id: PropTypes.string,
+  hanldleClick: PropTypes.func,
+  isInTheBasket: PropTypes.bool,
   book: PropTypes.shape({
     volumeInfo: PropTypes.shape({
       title: PropTypes.string.isRequired,
       authors: PropTypes.array.isRequired,
       description: PropTypes.string.isRequired,
     }),
-    hanldleClick: PropTypes.func,
+
     saleInfo: PropTypes.shape({
       retailPrice: PropTypes.shape({
         amount: PropTypes.number.isRequired,
       }),
-
     }),
   }),
 };
 
 export default Book;
-
